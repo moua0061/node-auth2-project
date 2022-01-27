@@ -75,6 +75,7 @@ const { password } = req.body
     if (bcrypt.compareSync(password, req.user.password)) {
           const token = makeToken(req.user)
           res.json({
+            status: 201,
             message: `${req.user.username} is back!`,
             token
           })
